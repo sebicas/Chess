@@ -30,7 +30,7 @@ A feature-rich, interactive chess application built with modern web technologies
 
 1.  **Clone the repository**:
     ```bash
-    git clone <repository-url>
+    git clone git@github.com:sebicas/Chess.git
     cd chess-master
     ```
 
