@@ -30,8 +30,8 @@ A feature-rich, interactive chess application built with modern web technologies
 
 1.  **Clone the repository**:
     ```bash
-    git clone git@github.com:sebicas/Chess.git
-    cd chess-master
+    git clone https://github.com/sebicas/Chess
+    cd Chess
     ```
 
 2.  **Install dependencies**:
