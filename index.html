@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Master</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Home Screen -->
+        <div id="home-screen" class="screen active">
+            <div class="container">
+                <h1 class="title">♔ Chess Master ♚</h1>
+                <p class="subtitle">Choose your game mode</p>
+                <div class="button-group">
+                    <button id="btn-1player" class="btn btn-primary">
+                        <span class="btn-icon">🤖</span>
+                        <span>1 Player</span>
+                    </button>
+                    <button id="btn-2player" class="btn btn-primary">
+                        <span class="btn-icon">👥</span>
+                        <span>2 Players</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Difficulty Selection Screen -->
+        <div id="difficulty-screen" class="screen">
+            <div class="container">
+                <h2 class="title">Select Difficulty</h2>
+                <p class="subtitle">Choose AI opponent strength</p>
+                <div class="button-group">
+                    <button id="btn-easy" class="btn btn-difficulty" data-difficulty="easy">
+                        <span class="btn-icon">🌱</span>
+                        <span>Easy</span>
+                        <span class="difficulty-desc">1 move lookahead</span>
+                    </button>
+                    <button id="btn-medium" class="btn btn-difficulty" data-difficulty="medium">
+                        <span class="btn-icon">⚡</span>
+                        <span>Medium</span>
+                        <span class="difficulty-desc">2-3 moves lookahead</span>
+                    </button>
+                    <button id="btn-hard" class="btn btn-difficulty" data-difficulty="hard">
+                        <span class="btn-icon">🔥</span>
+                        <span>Hard</span>
+                        <span class="difficulty-desc">4-5 moves lookahead</span>
+                    </button>
+                </div>
+                
+                <!-- Color Selection -->
+                <div class="color-selection">
+                    <p class="subtitle">Choose your color</p>
+                    <div class="color-buttons">
+                        <button id="btn-white" class="btn btn-color selected" data-color="white">
+                            <span class="piece">♔</span>
+                            <span>White</span>
+                        </button>
+                        <button id="btn-black" class="btn btn-color" data-color="black">
+                            <span class="piece">♚</span>
+                            <span>Black</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <button id="btn-start-game" class="btn btn-primary">Start Game</button>
+                <button id="btn-back-home" class="btn btn-secondary">Back</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div class="game-container">
+                <!-- Left Panel - Captured Pieces -->
+                <div class="side-panel left-panel">
+                    <h3>Captured by White</h3>
+                    <div id="captured-black" class="captured-pieces"></div>
+                </div>
+
+                <!-- Main Game Area -->
+                <div class="main-game">
+                    <div class="game-header">
+                        <div id="turn-indicator" class="turn-indicator">White to move</div>
+                        <div id="game-status" class="game-status"></div>
+                    </div>
+                    
+                    <div id="chessboard" class="chessboard"></div>
+                    
+                    <div class="game-controls">
+                        <button id="btn-undo" class="btn btn-control">↶ Undo</button>
+                        <button id="btn-restart" class="btn btn-control">⟳ Restart</button>
+                        <button id="btn-quit" class="btn btn-control">⌂ Home</button>
+                    </div>
+                </div>
+
+                <!-- Right Panel - Move History -->
+                <div class="side-panel right-panel">
+                    <h3>Captured by Black</h3>
+                    <div id="captured-white" class="captured-pieces"></div>
+                    <h3 style="margin-top: 20px;">Move History</h3>
+                    <div id="move-history" class="move-history"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="audio-move" preload="auto">
+        <source src="sounds/move.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-capture" preload="auto">
+        <source src="sounds/capture.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-check" preload="auto">
+        <source src="sounds/check.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="js/ChessPiece.js"></script>
+    <script src="js/ChessBoard.js"></script>
+    <script src="js/GameLogic.js"></script>
+    <script src="js/AIEngine.js"></script>
+    <script src="js/UI.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
